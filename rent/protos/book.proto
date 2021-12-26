@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package book;
+
+message GetBookRequest {
+    int32 id = 1;
+}
+
+message GetBookResponse {
+    string title = 1;
+    string author = 2;
+    int32 page_count = 3;
+    string isbn = 4;
+    string description = 5;
+}
+
+service BookService {
+  rpc GetBook(GetBookRequest) returns (GetBookResponse) {};
+}
